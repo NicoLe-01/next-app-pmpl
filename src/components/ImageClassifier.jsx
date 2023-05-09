@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as tf from "@tensorflow/tfjs";
 import fetch from "isomorphic-fetch";
-import Image from "next/image";
 
 const ImageClassifier = () => {
   const [selectedFile, setSelectedFile] = useState();
@@ -15,7 +14,9 @@ const ImageClassifier = () => {
   useEffect(() => {
     // Load Model
     const runModel = async () => {
-      const model = await tf.loadLayersModel("/my_tfjs_model_v2/model.json");
+      const model = await tf.loadLayersModel(
+        "/my_tfjs_model_v2/model.json"
+      );
 
       setModel(model);
       // console.log(model.outputLayers[0].units);
@@ -139,11 +140,9 @@ const ImageClassifier = () => {
             </label>
           </form>
           {selectedFile && (
-            <Image
+            <img
               src={preview}
               alt=""
-              width={500}
-              height={300}
               className="h-[24rem] w-[48rem] object-contain transition-all ease-in duration-300"
             />
           )}
