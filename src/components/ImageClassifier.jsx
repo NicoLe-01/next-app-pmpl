@@ -97,10 +97,11 @@ const ImageClassifier = () => {
           .expandDims();
         const result = model.predict(tensorImg);
 
-        // console.log(tf.argMax(result));
         const predicted_index = result.as1D().argMax().dataSync()[0];
+        console.log(predicted_index)
 
         const predictedClass = classLabels[predicted_index];
+        console.log(predictedClass)
         return [predictedClass];
       });
 
