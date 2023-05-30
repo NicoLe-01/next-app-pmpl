@@ -1,7 +1,7 @@
 export default function NavBar() {
   return (
     <div>
-      <nav className="fixed top-0 bg-[#e4e4e4] left-0 right-0 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+      <nav className="fixed top-0 bg-[#e4e4e4] left-0 right-0 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 shadow-xl">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
             Batik Classifier
@@ -45,8 +45,8 @@ export default function NavBar() {
               <li>
                 <a
                   href="#"
-                  className="block py-2 pl-3 pr-4 text-white bg-[#e4e4e4] rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
-                  aria-current="page"
+                  className="block py-2 pl-3 pr-4 text-white bg-[#e4e4e4] rounded md:bg-transparent md:text-gray-700 md:p-0 dark:text-white md:hover:text-blue-700"
+                  
                 >
                   Home
                 </a>

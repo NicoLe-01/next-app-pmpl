@@ -4,7 +4,7 @@ export default function Types() {
   return (
     <div id="types">
       <div
-        className="flex flex-col h-fit text-center mb-[10rem] mt-[7rem] transition-all ease-in duration-300"
+        className="flex flex-col h-fit text-center transition-all ease-in duration-300 py-12"
         id="container-types"
       >
         <div className="flex flex-col items-center justify-center">

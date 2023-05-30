@@ -14,9 +14,7 @@ const ImageClassifier = () => {
   useEffect(() => {
     // Load Model
     const runModel = async () => {
-      const model = await tf.loadLayersModel(
-        "/my_tfjs_model_v2/model.json"
-      );
+      const model = await tf.loadLayersModel("/my_tfjs_model_v2/model.json");
 
       setModel(model);
       // console.log(model.outputLayers[0].units);
@@ -98,10 +96,10 @@ const ImageClassifier = () => {
         const result = model.predict(tensorImg);
 
         const predicted_index = result.as1D().argMax().dataSync()[0];
-        console.log(predicted_index)
+        console.log(predicted_index);
 
         const predictedClass = classLabels[predicted_index];
-        console.log(predictedClass)
+        console.log(predictedClass);
         return [predictedClass];
       });
 
@@ -120,8 +118,9 @@ const ImageClassifier = () => {
 
       <div
         id="signRecognition"
-        className="flex flex-col lg:flex-row lg:m-20 items-center justify-center transition-all ease-in duration-300"
+        className="flex flex-col lg:flex lg:m-2 items-center justify-center transition-all ease-in duration-300"
       >
+        <p className="text-lg pt-5 font-semibold">Silahkan Upload Gambar Batik :</p>
         <div className="upload flex flex-col items-center justify-start basis-3/4 transition-all ease-in duration-300">
           <form className="space-x-6">
             <div className="shrink-0"></div>
@@ -129,15 +128,14 @@ const ImageClassifier = () => {
               <input
                 id="inputImage"
                 type="file"
-                className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0
+                className="block w-full text-lg text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0
                         file:text-sm file:font-semibold
-                        file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100 hover:cursor-pointer py-10 transition-all ease-in duration-300"
+                        file:bg-blue-700 file:text-white hover:file:bg-blue-800 hover:cursor-pointer py-5 transition-all ease-in duration-300"
                 name="image"
                 accept=".png, .jpg, .jpeg"
                 onChange={handleImageAndPredict}
                 htmlFor="inputImage"
               />{" "}
-              Input Image
             </label>
           </form>
           {selectedFile && (
@@ -150,14 +148,14 @@ const ImageClassifier = () => {
 
           {/* Loader Animation */}
           <div className="flex">
-            <p className="font-normal text-2xl p-5 transition-all ease-in duration-300">
+            <p className="text-2xl p-5 transition-all ease-in duration-300 font-bold">
               Hasil: {predictedClass}
             </p>
             <div
               className={
                 loading
                   ? "flex justify-center items-center transition-all ease-in duration-300"
-                  : "flex justify-center items-center hidden transition-all ease-in duration-300"
+                  : "flex justify-center items-center  hidden transition-all ease-in duration-300"
               }
             >
               <div className="loader bg-white p-4 rounded-full flex space-x-2 transition-all ease-in duration-300">
@@ -168,7 +166,7 @@ const ImageClassifier = () => {
             </div>
           </div>
         </div>
-        <div className="ml-0 mx-auto md:ml-[4rem] xl:ml-0" id="signRecogRules">
+        {/* <div className="ml-0 mx-auto md:ml-[4rem] xl:ml-0" id="signRecogRules">
           <div className="mx-5">
             <div>
               <p className="font-semibold text-2xl py-5 text-center lg:text-start">
@@ -182,7 +180,7 @@ const ImageClassifier = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
