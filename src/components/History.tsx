@@ -53,7 +53,7 @@ export default function History() {
               className="shadow"
             />
           </div>
-          <p className="px-10 w-[50%] text-lg text-right">
+          <p className="px-10 w-[50%] text-lg text-left">
             Teknik pewarnaan kain dengan menggunakan malam atau lilin disebut
             batik. Batik telah dikenal sejak abad ke-4 SM di Mesir. Di Asia,
             teknik serupa batik juga digunakan di Tiongkok, India, dan Jepang.
