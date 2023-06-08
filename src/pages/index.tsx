@@ -1,6 +1,7 @@
 import History from "../components/History";
 import NavBar from "../components/NavBar";
 import ImageClassifier from "../components/ImageClassifier";
+import Footer from "../components/footer";
 import Types from "@/components/Types";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <ImageClassifier />
       <History />
       <Types />
+      <Footer />
     </div>
   );
 }

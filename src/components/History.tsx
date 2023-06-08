@@ -12,8 +12,8 @@ export default function History() {
         </p>
 
         <div className="flex">
-          <div className="flex flex-row justify-center items-center space-x-5">
-            <p className="text-left px-10 w-[50%] text-lg">
+          <div className="flex flex-row justify-center items-center space-x-10 py-10">
+            <p className="text-left px-8 w-[50%] text-lg bg-[#ECE5C7] py-10 rounded-2xl shadow-2xl">
               <span className="font-semibold text-xl text-left"> Batik </span>{" "}
               adalah teknik melukis kain menggunakan malam yang diterapkan pada
               seluruh permukaan kain. Asal-usulnya berasal dari Jawa, Indonesia,
@@ -33,27 +33,28 @@ export default function History() {
               menjadi bagian penting dari budaya Indonesia dan popularitasnya
               telah menyebar ke seluruh dunia.
             </p>
-            <div className="flex justify-center items-center mt-8">
+            <div className="bg-white">
               <Image
                 src="/batik-bali.jpg"
                 width={500}
                 height={500}
                 alt="batik-bali"
+                className="shadow-2xl rounded-2xl"
               />
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-center items-center space-x-5 py-5">
-          <div className="flex justify-center items-center mt-8">
+        <div className="flex flex-row justify-center items-center space-x-10 py-5">
+          <div className="">
             <Image
               src="/batik2.jpg"
               width={500}
               height={500}
               alt="batik-bali"
-              className="shadow"
+              className="shadow-2xl rounded-2xl"
             />
           </div>
-          <p className="px-10 w-[50%] text-lg text-left">
+          <p className="px-8 w-[50%] py-8 text-lg text-left rounded-lg bg-[#ECE5C7] shadow-2xl">
             Teknik pewarnaan kain dengan menggunakan malam atau lilin disebut
             batik. Batik telah dikenal sejak abad ke-4 SM di Mesir. Di Asia,
             teknik serupa batik juga digunakan di Tiongkok, India, dan Jepang.

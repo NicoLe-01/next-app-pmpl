@@ -20,8 +20,8 @@ export default function Types() {
               id="container-batik-tulis"
               className="flex items-center justify-center space-x-14 py-10 px-2"
             >
-              <div className="w-[40%]">
-                <li className="list-none font-bold py-2 text-xl text-center">
+            <div className="w-[50%] bg-[#ECE5C7] px-5 py-3 rounded-lg shadow-2xl">
+                <li className="list-none font-bold py-2 text-xl text-left">
                   Batik Tulis
                 </li>
                 <p className="py-2 font-Roboto text-left text-lg">
@@ -44,7 +44,7 @@ export default function Types() {
                 width={200}
                 height={100}
                 alt="batik-tulis"
-                className="flex"
+                className="flex shadow-2xl rounded-2xl"
               />
             </div>
 
@@ -57,10 +57,10 @@ export default function Types() {
                 width={200}
                 height={100}
                 alt="batik-cap"
-                className="flex"
+                className="flex shadow-2xl rounded-2xl"
               />
-              <div className="w-[40%]">
-                <li className="list-none font-bold py-2 text-xl text-center ">
+              <div className="w-[50%] bg-[#ECE5C7] px-5 py-3 rounded-lg shadow-2xl">
+                <li className="list-none font-bold py-2 text-xl text-left">
                   Batik Cap
                 </li>
                 <p className="py-2 font-Roboto text-left text-lg">
@@ -84,8 +84,8 @@ export default function Types() {
               id="container-batik-tulis"
               className="flex items-center justify-center space-x-14 py-10 px-2"
             >
-              <div className="w-[40%]">
-                <li className="list-none font-bold py-2 text-xl text-center">
+              <div className="w-[50%] bg-[#ECE5C7] px-5 py-3 rounded-lg shadow-2xl">
+                <li className="list-none font-bold py-2 text-xl text-left">
                   Batik Lukis
                 </li>
                 <p className="py-2 font-Roboto text-left text-lg">
@@ -102,10 +102,10 @@ export default function Types() {
               </div>
               <Image
                 src={"/batik-lukis.jpg"}
-                width={300}
+                width={200}
                 height={100}
                 alt="batik-lukis"
-                className="flex"
+                className="flex shadow-2xl rounded-2xl"
               />
             </div>
           </div>

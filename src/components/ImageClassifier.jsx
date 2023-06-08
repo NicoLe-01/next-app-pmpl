@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import * as tf from "@tensorflow/tfjs";
 import fetch from "isomorphic-fetch";
+import Image from "next/image";
+import placeholderImage from "/public/images/batik-bali.jpg";
 
 const ImageClassifier = () => {
   const [selectedFile, setSelectedFile] = useState();
@@ -36,7 +38,7 @@ const ImageClassifier = () => {
 
   useEffect(() => {
     if (!selectedFile) {
-      setPreview(undefined);
+      setPreview(placeholderImage);
       return;
     }
     const objectUrl = URL.createObjectURL(selectedFile);
@@ -60,7 +62,7 @@ const ImageClassifier = () => {
 
   const createHTMLImageElement = (imageSrc) => {
     return new Promise((resolve) => {
-      const img = new Image();
+      const img = new window.Image();
 
       img.onload = () => resolve(img);
 
@@ -109,9 +111,9 @@ const ImageClassifier = () => {
   };
 
   return (
-    <div className="h-fit text-center mb-[10rem] mt-[7rem] transition-all ease-in duration-300">
-      <div id="titleText">
-        <p className="font-Roboto text-center text-[1rem] md:text-[1rem] xl:text-[3rem] transition-all ease-in duration-300">
+    <div className="bg-[#ECE5C7] mx-auto rounded-2xl h-fit text-center mb-[10rem] mt-[7rem] transition-all ease-in duration-300 w-[60%] shadow-xl">
+      <div id="titleText" className="pt-8">
+        <p className="font-Roboto font-bold text-center text-2xl md:text-lg xl:text-4xl transition-all ease-in duration-300">
           Batik Classifier
         </p>
       </div>
@@ -120,7 +122,9 @@ const ImageClassifier = () => {
         id="signRecognition"
         className="flex flex-col lg:flex lg:m-2 items-center justify-center transition-all ease-in duration-300"
       >
-        <p className="text-lg pt-5 font-semibold">Silahkan Upload Gambar Batik :</p>
+        <p className="text-lg pt-5 font-semibold">
+          Silahkan Upload Gambar Batik :
+        </p>
         <div className="upload flex flex-col items-center justify-start basis-3/4 transition-all ease-in duration-300">
           <form className="space-x-6">
             <div className="shrink-0"></div>
@@ -130,7 +134,7 @@ const ImageClassifier = () => {
                 type="file"
                 className="block w-full text-lg text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0
                         file:text-sm file:font-semibold
-                        file:bg-blue-700 file:text-white hover:file:bg-blue-800 hover:cursor-pointer py-5 transition-all ease-in duration-300"
+                        file:bg-[#116A7B] file:text-white hover:file:bg-[#073d48] hover:cursor-pointer py-5 transition-all ease-in duration-300"
                 name="image"
                 accept=".png, .jpg, .jpeg"
                 onChange={handleImageAndPredict}
@@ -140,14 +144,21 @@ const ImageClassifier = () => {
           </form>
           {selectedFile && (
             <img
-              src={preview}
-              alt=""
+              src={URL.createObjectURL(selectedFile)}
+              alt="uploaded-image"
+              className="h-[24rem] w-[48rem] object-contain transition-all ease-in duration-300"
+            />
+          )}
+          {!selectedFile && (
+            <Image
+              src={placeholderImage}
+              alt="cortupt"
               className="h-[24rem] w-[48rem] object-contain transition-all ease-in duration-300"
             />
           )}
 
           {/* Loader Animation */}
-          <div className="flex">
+          <div className="flex pb-8">
             <p className="text-2xl p-5 transition-all ease-in duration-300 font-bold">
               Hasil: {predictedClass}
             </p>
@@ -166,21 +177,6 @@ const ImageClassifier = () => {
             </div>
           </div>
         </div>
-        {/* <div className="ml-0 mx-auto md:ml-[4rem] xl:ml-0" id="signRecogRules">
-          <div className="mx-5">
-            <div>
-              <p className="font-semibold text-2xl py-5 text-center lg:text-start">
-                Catatan:
-              </p>
-            </div>
-            <ul className="list-disc list-outside text-start">
-              <li>
-                Model masih belum mampu memprediksi secara akurat dikarenakan
-                dataset yang kurang bagus
-              </li>
-            </ul>
-          </div>
-        </div> */}
       </div>
     </div>
   );
